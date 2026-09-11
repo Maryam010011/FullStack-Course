@@ -1,0 +1,17 @@
+body{
+    background-color: #FFFFF0;
+    margin:0;
+    padding:0;
+    color: rgb(0, 0, 0);
+}   
+header{
+    background-color: #FBCFCD;
+    padding: 50px 20px;
+    text-align: center;
+}
+nav a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin: 0 10px;
+    background-color: blanchedalmond;
+}
