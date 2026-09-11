@@ -3,9 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio</title>
+     
 </head>
 <body>
-    
+    <header>
+        <!--Navigation-->
+        <nav>
+            <ul>
+                <li><a href="#About">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#links">Links</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--Main-->
+    <main>
+        <!--About-->
+       <section id="About">
+            <h1>Portfolio</h1>
+            <p>This is a simple paragraph for the LAB1 assignment.</p>
+            <img src="image/llogo.png" alt="Profile Image" width="200" height="200">
+            <h2>About</h2>
+            <p>This is a brief introduction about myself.</p>
+        </section>
+        <!--Education-->
+        <section id="education">
+            <h2>Education</h2>
+            <table border="1">
+                <tr>
+                    <th>Degree</th>
+                    <th>Institution</th>
+                    <th>Year</th>
+                </tr>
+                <tr>
+                    <td>Bachelor of Science in Computer Science</td>
+                    <td>Air University</td>
+                    <td>2026</td>
+                </tr>
+                <tr>
+                    <td>ICS</td>
+                    <td>Pak Turk Maarif</td>
+                    <td>2024</td>
+                </tr>
+            </table>
+        </section>
+        <!--Skills-->
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+        </section>
+        <!--Links-->
+        <section id="links">
+            <h2>Links</h2>
+            <a href="https://www.google.com" target="_blank">Visit Google</a>
+            <br>
+            <a href="https://www.github.com" target="_blank">Visit GitHub</a>
+        </section>
+        <!--Contact-->
+        <section id="contact">
+            <h2>Contact</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" placeholder="Enter your name" id="name" name="name">
+                <br><br>
+                <label for="email">Email:</label>
+                <input type="email" placeholder="Enter your email" id="email" name="email">
+                <br><br>
+                <label for="password">Password:</label>
+                <input type="password" placeholder="Enter your password" id="password" name="password">
+                <br><br>
+                <label for="message">Message:</label><br>
+                <textarea placeholder="Enter your message" id="message" name="message"></textarea>
+                <br><br>
+                <button type="submit">
+                    Submit
+                </button>
+            </form>
+            <br><br>
+    <!--footer-->
+    <section id="footer">
+        @ Maryam Jahangir 2026
+    </section>
+</main>
 </body>
 </html>
