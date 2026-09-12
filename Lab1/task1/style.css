@@ -3,15 +3,181 @@ body{
     margin:0;
     padding:0;
     color: rgb(0, 0, 0);
-}   
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+}
+
 header{
     background-color: #FBCFCD;
-    padding: 50px 20px;
+    padding: 30px 20px;
     text-align: center;
 }
+
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
 nav a{
     color: rgb(0, 0, 0);
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0;
+    padding: 8px 16px;
     background-color: blanchedalmond;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover{
+    background-color: #f5b8b3;
+    transform: translateY(-2px);
+}
+
+.container{
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    text-align: center;
+}
+
+.row h1{
+    width: 100%;
+    text-align: center;
+    color: #d1706b;
+    margin-top: 10px;
+}
+
+.col-6, .col-sm-3{
+    background-color: #fff8ee;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+main{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+}
+
+section{
+    padding: 30px 0;
+}
+
+section h2{
+    color: #d1706b;
+    border-bottom: 2px solid #FBCFCD;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+section img{
+    display: block;
+    border-radius: 50%;
+    margin: 15px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+hr{
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 10px 0;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
+
+table th, table td{
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th{
+    background-color: #FBCFCD;
+    color: #000;
+}
+
+table tr:nth-child(even){
+    background-color: #fff8ee;
+}
+
+#skills ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#skills li{
+    background-color: blanchedalmond;
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-weight: 600;
+}
+
+#links a{
+    color: #d1706b;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#links a:hover{
+    text-decoration: underline;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+}
+
+form label{
+    font-weight: 600;
+}
+
+form input, form textarea{
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+form button{
+    background-color: #d1706b;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: fit-content;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover{
+    background-color: #b85751;
+}
+
+#footer{
+    text-align: center;
+    padding: 20px;
+    background-color: #FBCFCD;
+    font-size: 0.9em;
 }
