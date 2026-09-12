@@ -13,6 +13,7 @@ header{
     text-align: center;
 }
 
+
 nav ul{
     list-style: none;
     display: flex;
@@ -82,12 +83,17 @@ section h2{
     padding-bottom: 8px;
     display: inline-block;
 }
+h1{
+    color: #d1706b;
+    text-align: center;
+}
 
 section img{
     display: block;
     border-radius: 50%;
     margin: 15px 0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    
 }
 
 hr{
