@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  body {
+    background-color: #f0f2f5;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+  }
+  .form-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    width: 100%;
+    max-width: 500px;
+  }
+  .form-card h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+  }
+  .gender-heading {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .btn-register {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 25px;
+  }
+  .form-label {
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+
+<div class="form-card">
+  <h2>Registration</h2>
+  <form>
+    <div class ="row">
+    <div class="md-6 mb-3">
+      <label for="fullName" class="form-label">Full Name</label>
+      <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" class="form-control" id="username" placeholder="Enter a username" required>
+    </div>
+    </div>
+     <div class="row">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone Number</label>
+      <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+    </div>
+     </div>
+     <div class="row">
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Enter a password" required>
+    </div>
+     </div>
+    <div class="mb-3">
+      <label for="confirmPassword" class="form-label">Confirm Password</label>
+      <input type="password" class="form-control" id="confirmPassword" placeholder="Re-enter your password" required>
+    </div>
+
+    <h5 class="gender-heading">Gender</h5>
+    <div style="display: flex; gap: 15px;">
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="gender" id="genderMale" value="male">
+      <label class="form-check-label" for="genderMale">Male</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="female">
+      <label class="form-check-label" for="genderFemale">Female</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="gender" id="genderPreferNot" value="prefer_not_to_say">
+      <label class="form-check-label" for="genderPreferNot">Prefer not to say</label>
+    </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-register">Register</button>
+  </form>
+</div>
+
+</body>
+</html>
