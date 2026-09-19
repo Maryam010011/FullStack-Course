@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ventic Dashboard</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="d-flex">
+0
+  <aside class="sidebar">
+    <div class="offcanvas-lg offcanvas-start sidebar-panel" tabindex="-1" id="sidebarMenu">
+
+      <div class="offcanvas-header justify-content-end">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close menu"></button>
+      </div>
+
+      <div class="offcanvas-body">
+        <div class="w-100 px-3 pb-3">
+
+          <a class="brand d-flex align-items-center gap-2 text-decoration-none mb-4" href="#">
+            <span class="brand-logo">V</span>
+            <span class="fs-4 fw-bold text-white">Ventic</span>
+          </a>
+
+          <nav class="nav flex-column gap-1 sidebar-nav">
+            <a class="nav-link active" href="#"><i class="bi bi-grid-fill"></i> Dashboard</a>
+            <a class="nav-link" href="#"><i class="bi bi-receipt"></i> Orders</a>
+            <a class="nav-link" href="#"><i class="bi bi-calendar-event"></i> Events</a>
+            <a class="nav-link" href="#"><i class="bi bi-people"></i> Customers</a>
+            <a class="nav-link" href="#"><i class="bi bi-bar-chart-line"></i> Analytics</a>
+            <a class="nav-link" href="#"><i class="bi bi-star"></i> Reviews</a>
+            <a class="nav-link" href="#"><i class="bi bi-gear"></i> Settings</a>
+          </nav>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ MAIN AREA ============ -->
+  <div class="main flex-grow-1">
+
+    <!-- Top bar -->
+    <header class="topbar bg-white border-bottom d-flex align-items-center gap-3 px-3 px-lg-4">
+
+      <!-- Menu button (only shown on small screens) -->
+      <button class="btn btn-outline-secondary d-lg-none" type="button"
+              data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu"
+              aria-controls="sidebarMenu" aria-label="Open menu">
+        <i class="bi bi-list"></i>
+      </button>
+
+      <!-- Search -->
+      <div class="input-group search-box">
+        <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-search"></i></span>
+        <input type="search" class="form-control border-start-0 ps-0" placeholder="Search events or orders" aria-label="Search">
+      </div>
+
+      <div class="ms-auto d-flex align-items-center gap-3">
+
+        <!-- Notifications -->
+        <button class="btn btn-light border position-relative rounded-circle icon-btn" type="button" aria-label="Notifications, 12 new">
+          <i class="bi bi-bell"></i>
+          <span class="badge rounded-pill text-bg-danger position-absolute top-0 start-100 translate-middle">12</span>
+        </button>
+
+        <!-- Admin profile -->
+        <div class="d-flex align-items-center gap-2">
+          <div class="text-end lh-sm d-none d-md-block">
+            <div class="fw-semibold">Daniel Carter</div>
+            <small class="text-secondary">Super Admin</small>
+          </div>
+          <img src="admin.jpg" class="avatar rounded-circle" alt="Daniel Carter, Super Admin">
+        </div>
+
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <main class="p-3 p-lg-4">
+
+      <!-- Heading + period picker -->
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+        <div>
+          <h1 class="h3 fw-bold mb-1">Dashboard</h1>
+          <p class="text-secondary mb-0">Ticket sales and event activity at a glance.</p>
+        </div>
+
+        <div class="dropdown">
+          <button class="btn btn-light border dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-calendar3 me-2"></i>Last 30 days
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Last 7 days</a></li>
+            <li><a class="dropdown-item active" href="#">Last 30 days</a></li>
+            <li><a class="dropdown-item" href="#">Last 60 days</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Four number cards -->
+      <div class="row g-3 g-lg-4 mb-4">
+
+        <div class="col-sm-6 col-xl-3">
+          <div class="card h-100">
+            <div class="card-body d-flex align-items-center gap-3">
+              <div class="icon-box bg-warning-subtle text-warning-emphasis"><i class="bi bi-ticket-perforated"></i></div>
+              <div>
+                <div class="text-secondary small">Tickets</div>
+                <div class="fs-4 fw-bold lh-1 my-1">215</div>
+                <small class="text-success fw-semibold"><i class="bi bi-arrow-up-short"></i>4.2% this week</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-xl-3">
+          <div class="card h-100">
+            <div class="card-body d-flex align-items-center gap-3">
+              <div class="icon-box bg-success-subtle text-success-emphasis"><i class="bi bi-cash-stack"></i></div>
+              <div>
+                <div class="text-secondary small">Revenue</div>
+                <div class="fs-4 fw-bold lh-1 my-1">$536k</div>
+                <small class="text-danger fw-semibold"><i class="bi bi-arrow-down-short"></i>1.8% this week</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-xl-3">
+          <div class="card h-100">
+            <div class="card-body d-flex align-items-center gap-3">
+              <div class="icon-box bg-primary-subtle text-primary-emphasis"><i class="bi bi-bag-check"></i></div>
+              <div>
+                <div class="text-secondary small">Sales</div>
+                <div class="fs-4 fw-bold lh-1 my-1">652</div>
+                <small class="text-success fw-semibold"><i class="bi bi-arrow-up-short"></i>6.5% this week</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-xl-3">
+          <div class="card h-100">
+            <div class="card-body d-flex align-items-center gap-3">
+              <div class="icon-box bg-info-subtle text-info-emphasis"><i class="bi bi-calendar-check"></i></div>
+              <div>
+                <div class="text-secondary small">Events held</div>
+                <div class="fs-4 fw-bold lh-1 my-1">275</div>
+                <small class="text-success fw-semibold"><i class="bi bi-arrow-up-short"></i>2.4% this week</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Best selling + Ticket card -->
+      <div class="row g-3 g-lg-4 mb-4">
+
+        <!-- Best selling -->
+        <div class="col-lg-7">
+          <div class="card h-100">
+            <div class="card-body p-4">
+
+              <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4">
+                <h2 class="h5 fw-bold mb-0">Best selling</h2>
+                <ul class="nav nav-pills period-tabs">
+                  <li class="nav-item"><a class="nav-link active" href="#">Monthly</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Weekly</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Daily</a></li>
+                </ul>
+              </div>
+
+              <div class="d-flex flex-column flex-sm-row align-items-center gap-4">
+
+                <!-- Donut chart made with CSS only. Change --sold to change the chart. -->
+                <div class="donut flex-shrink-0" style="--sold: 68;" role="img" aria-label="68 percent of tickets sold">
+                  <div class="donut-hole">
+                    <div class="fs-3 fw-bold lh-1">68%</div>
+                    <small class="text-secondary">sold</small>
+                  </div>
+                </div>
+
+                <div class="w-100">
+                  <div class="d-flex align-items-center gap-3 mb-3">
+                    <span class="dot dot-sold"></span>
+                    <div>
+                      <div class="fw-bold">45,612</div>
+                      <small class="text-secondary">Tickets sold</small>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center gap-3 mb-3">
+                    <span class="dot dot-left"></span>
+                    <div>
+                      <div class="fw-bold">21,512</div>
+                      <small class="text-secondary">Tickets left</small>
+                    </div>
+                  </div>
+                  <div class="border-top pt-3 small text-secondary">
+                    <strong class="text-body">275</strong> events held in this period
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ticket sold today (styled like a ticket stub) -->
+        <div class="col-lg-5">
+          <div class="ticket-card h-100 d-flex flex-column">
+
+            <div class="p-4">
+              <div class="text-white-50 mb-1">Tickets sold today</div>
+              <div class="ticket-number">4,565 <small>pcs</small></div>
+              <span class="badge rounded-pill bg-success-subtle text-success-emphasis mt-2">+4% than yesterday</span>
+            </div>
+
+            <!-- Dashed "tear-off" line -->
+            <div class="ticket-tear"></div>
+
+            <div class="p-4 pt-3 mt-auto">
+              <div class="d-flex justify-content-between small mb-2">
+                <span class="text-white-50">Daily target</span>
+                <span class="fw-semibold">76%</span>
+              </div>
+              <div class="progress" role="progressbar" aria-label="Daily target" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" style="width: 76%"></div>
+              </div>
+              <a href="#" class="d-inline-block mt-3 text-white fw-semibold">View details</a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Recent activity + Quick summary -->
+      <div class="row g-3 g-lg-4">
+
+        <div class="col-lg-8">
+          <div class="card h-100">
+            <div class="card-body p-4 pb-2">
+              <h2 class="h5 fw-bold mb-2">Recent activity</h2>
+            </div>
+            <ul class="list-group list-group-flush">
+
+              <li class="list-group-item d-flex align-items-center gap-3 px-4 py-3">
+                <div class="icon-box sm bg-warning-subtle text-warning-emphasis"><i class="bi bi-ticket-perforated"></i></div>
+                <div class="flex-grow-1">
+                  <div class="fw-semibold">New ticket order</div>
+                  <small class="text-secondary">Summer Music Night, today 10:25 AM</small>
+                </div>
+                <span class="fw-bold">+120</span>
+              </li>
+
+              <li class="list-group-item d-flex align-items-center gap-3 px-4 py-3">
+                <div class="icon-box sm bg-primary-subtle text-primary-emphasis"><i class="bi bi-person-plus"></i></div>
+                <div class="flex-grow-1">
+                  <div class="fw-semibold">New customer registered</div>
+                  <small class="text-secondary">Sara Ahmed, today 9:40 AM</small>
+                </div>
+                <span class="fw-bold">+1</span>
+              </li>
+
+              <li class="list-group-item d-flex align-items-center gap-3 px-4 py-3">
+                <div class="icon-box sm bg-success-subtle text-success-emphasis"><i class="bi bi-credit-card"></i></div>
+                <div class="flex-grow-1">
+                  <div class="fw-semibold">Payment received</div>
+                  <small class="text-secondary">Order #4821, today 9:12 AM</small>
+                </div>
+                <span class="fw-bold">$1,240</span>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card h-100">
+            <div class="card-body p-4">
+              <h2 class="h5 fw-bold mb-3">Quick summary</h2>
+              <div class="display-6 fw-bold lh-1">84%</div>
+              <p class="text-secondary mt-2 mb-3">Events on schedule</p>
+              <div class="progress" role="progressbar" aria-label="Events on schedule" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" style="width: 84%"></div>
+              </div>
+              <small class="text-secondary d-block mt-2">21 of 25 events are running as planned.</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<!-- Bootstrap JavaScript (needed for the mobile menu and the dropdown) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
