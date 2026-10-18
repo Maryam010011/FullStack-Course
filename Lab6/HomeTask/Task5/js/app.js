@@ -154,9 +154,4 @@ document.addEventListener("click", event => {
   }
 });
 
-// Heartbeat: a timer that keeps ticking while the registration waits. If the page were blocked,
-// this number would freeze. It does not, because setTimeout does not block the browser.
-let beats = 0;
-setInterval(() => { el("heartbeat").textContent = ++beats; }, 250);
-
 render();
