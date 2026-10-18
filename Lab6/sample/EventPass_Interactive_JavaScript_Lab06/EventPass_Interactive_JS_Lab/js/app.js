@@ -63,6 +63,7 @@ function writeTrace(message, type = "normal") {
 function announce(message, kind = "normal") {
   statusLine.textContent = message;
   statusLine.dataset.kind = kind;
+  console.log(`Status: ${message} (${kind})`);
 }
 
 function renderSeats() {

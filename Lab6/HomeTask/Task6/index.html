@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Workshop Registration Portal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Campus Workshop Registration Portal</h1>
+    <p>University Training Day &middot; Task 6: tests and explanation</p>
+  </header>
+
+  <main class="page layout">
+    <div class="main-col">
+      <section aria-labelledby="ws-heading">
+        <h2 id="ws-heading">Available workshops</h2>
+        <div id="workshop-list" class="card-grid"></div>
+      </section>
+
+      <section class="demo-section" aria-labelledby="demo-heading">
+        <h2 id="demo-heading">Demonstrations</h2>
+        <p class="muted">Each button resets the demo data, fills in the inputs and runs a registration with the <em>Flow style</em> you chose on the right.</p>
+        <div class="btn-row">
+          <button type="button" class="btn secondary" data-action="demo" data-demo="success">1. Successful registration</button>
+          <button type="button" class="btn secondary" data-action="demo" data-demo="full">2. Full workshop</button>
+          <button type="button" class="btn secondary" data-action="demo" data-demo="approval">3. Approval failure</button>
+          <button type="button" class="btn secondary" data-action="demo" data-demo="delayed">4. Delayed confirmation</button>
+        </div>
+      </section>
+
+      <section class="progress-section" aria-labelledby="prog-heading">
+        <div class="section-head">
+          <h2 id="prog-heading">Registration progress</h2>
+          <p class="heartbeat">Page heartbeat: <strong id="heartbeat">0</strong></p>
+        </div>
+
+        <ol class="stages" id="stages">
+          <li class="stage is-pending" data-stage="capacity"><span class="stage-name">1. Check capacity</span><span class="stage-state">Waiting</span></li>
+          <li class="stage is-pending" data-stage="approval"><span class="stage-name">2. Get approval</span><span class="stage-state">Waiting</span></li>
+          <li class="stage is-pending" data-stage="confirmation"><span class="stage-name">3. Generate confirmation</span><span class="stage-state">Waiting</span></li>
+        </ol>
+
+        <h3 class="small-heading">Execution log (order of events)</h3>
+        <ol id="log" class="log" aria-live="polite"></ol>
+
+        <div id="confirmation" class="confirmation" hidden></div>
+      </section>
+
+      <section class="test-section" aria-labelledby="test-heading">
+        <div class="section-head">
+          <h2 id="test-heading">Acceptance tests</h2>
+          <button type="button" id="test-btn" class="btn" data-action="run-tests">Run acceptance tests</button>
+        </div>
+        <p class="muted">Runs every scenario in all three styles at 50x speed and compares the final state. Takes about a second.</p>
+        <div id="test-results"></div>
+      </section>
+    </div>
+
+    <aside class="panel" aria-labelledby="sum-heading">
+      <h2 id="sum-heading">Your selection</h2>
+      <p id="selection-count" class="muted"></p>
+      <ul id="selection-list" class="summary-list"></ul>
+      <p class="total-row">Total fee: <strong id="selection-total">Rs 0</strong></p>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+
+      <div class="btn-row">
+        <button type="button" class="btn secondary" data-action="quick-valid">Quick pick: W1 + W2</button>
+        <button type="button" class="btn ghost" data-action="clear">Clear</button>
+      </div>
+
+      <div class="check-box">
+        <label for="student-name">Student name</label>
+        <input id="student-name" type="text" autocomplete="name" placeholder="e.g. Ayesha Khan">
+
+        <label for="style">Flow style</label>
+        <select id="style">
+          <option value="callbacks">Nested callbacks (Task 4)</option>
+          <option value="promises">Promise chain</option>
+          <option value="async">async / await</option>
+        </select>
+
+        <label for="scenario">Simulate</label>
+        <select id="scenario">
+          <option value="none">Normal (everything works)</option>
+          <option value="approval">Approval failure</option>
+          <option value="slow">Delayed confirmation (3.5 s)</option>
+        </select>
+
+        <button type="button" id="register-btn" class="btn" data-action="register">Register</button>
+        <button type="button" id="check-btn" class="btn secondary" data-action="check">Check availability only</button>
+        <button type="button" class="btn ghost" data-action="reset">Reset demo data</button>
+        <p id="capacity-message" class="status" role="status" aria-live="polite"></p>
+      </div>
+    </aside>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
