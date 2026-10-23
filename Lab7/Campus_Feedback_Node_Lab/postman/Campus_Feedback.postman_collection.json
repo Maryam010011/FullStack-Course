@@ -1,0 +1,203 @@
+{
+  "info": {
+    "name": "Campus Feedback Lab \u2014 Week 7",
+    "_postman_id": "3d6cd1dc-4a3c-4fe7-b2fa-66ba2d6f9a17",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Core Node.js HTTP & File I/O hands-on lab."
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Health check (200)",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/health"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. List courses (200)",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/courses"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+              "pm.test('Has courses', () => pm.expect(pm.response.json().courses).to.be.an('array')); "
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. List feedback (200)",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/feedback"
+      }
+    },
+    {
+      "name": "4. Create feedback (201)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"courseId\":\"WEB\",\"student\":\"Ayesha\",\"rating\":5,\"message\":\"I learned how a Node.js API saves my feedback.\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{baseUrl}}/api/feedback"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Created 201', () => pm.response.to.have.status(201));",
+              "pm.test('Has saved id', () => pm.expect(pm.response.json().feedback.id).to.be.a('string')); "
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "5. Invalid rating (400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"courseId\":\"WEB\",\"rating\":9,\"message\":\"Great lab examples\"}"
+        },
+        "url": "{{baseUrl}}/api/feedback"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Bad request 400', () => pm.response.to.have.status(400));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "6. Unknown course (404)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"courseId\":\"NONE\",\"rating\":3,\"message\":\"Helpful material\"}"
+        },
+        "url": "{{baseUrl}}/api/feedback"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Not found 404', () => pm.response.to.have.status(404));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "7. Filter WEB feedback (200)",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/feedback?course=WEB"
+      }
+    },
+    {
+      "name": "8. Summary (200)",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/summary"
+      }
+    },
+    {
+      "name": "9. Malformed JSON (400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{not JSON"
+        },
+        "url": "{{baseUrl}}/api/feedback"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Malformed JSON gives 400', () => pm.response.to.have.status(400));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "10. Unknown API route (404)",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/unknown"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Unknown route gives 404', () => pm.response.to.have.status(404));"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

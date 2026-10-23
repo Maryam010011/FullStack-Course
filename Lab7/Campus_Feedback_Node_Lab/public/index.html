@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Campus Feedback Hub · Node.js Lab</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="nav"><span class="mark">◈ CAMPUS<span>DEV</span></span><span class="top-pill">NODE.JS LAB · WEEK 7</span></div>
+    <div class="hero-main"><div><p class="eyebrow">MODULES → FILES → REST API → POSTMAN</p><h1>Give your course<br><em>a voice.</em></h1><p class="desc">Submit honest feedback, watch your API save it, and see the results update in real time. All powered by Node.js core modules and a local file.</p><div class="hero-actions"><a href="#form" class="button primary">Write feedback ↗</a><a href="#responses" class="button ghost">See API response ↓</a></div></div><div class="terminal"><div class="dots"><i></i><i></i><i></i><span>node · server.js</span></div><pre><span class="muted">$</span> node server.js
+<span class="green">●</span> Server ready :3000
+
+<span class="blue">GET</span>  /api/courses    <span class="green">200</span>
+<span class="blue">GET</span>  /api/feedback   <span class="green">200</span>
+<span class="orange">POST</span> /api/feedback   <span class="green">201</span>
+
+<span class="muted">// Data saved to</span>
+<span class="orange">data/feedback.ndjson</span></pre></div></div>
+  </header>
+  <main class="wrap">
+    <div class="section-title"><div><p class="eyebrow dark">LIVE DATA FROM GET /api/summary</p><h2>Course pulse</h2></div><button id="refresh" class="button light">↻ Refresh API</button></div>
+    <div id="stats" class="cards" aria-live="polite"></div>
+    <div class="columns"><section id="form" class="panel"><div class="panel-top"><span class="eyebrow dark">POST /api/feedback</span><span class="step">01 / SEND</span></div><h2>Share your experience</h2><p class="sub">One request. One file write. One updated dashboard.</p>
+      <form id="feedback-form">
+        <label>Course<select id="course" required></select></label>
+        <label>Display name<input id="student" maxlength="40" placeholder="Your name or Anonymous" /></label>
+        <label>Rating<select id="rating" required><option value="5">★★★★★ · Excellent</option><option value="4">★★★★☆ · Very good</option><option value="3">★★★☆☆ · Okay</option><option value="2">★★☆☆☆ · Needs improvement</option><option value="1">★☆☆☆☆ · Poor</option></select></label>
+        <label>Feedback<textarea id="message" minlength="5" maxlength="400" rows="4" placeholder="What helped you learn? What could be improved?" required></textarea></label>
+        <button class="button primary submit" id="send" type="submit">Send feedback to API ↗</button>
+      </form><p id="form-status" role="status" aria-live="polite"></p>
+    </section>
+    <section id="responses" class="panel api-panel"><div class="panel-top"><span class="eyebrow dark">HTTP RESPONSE INSPECTOR</span><span class="step">02 / OBSERVE</span></div><h2>What did Node.js return?</h2><p class="sub">See how a frontend communicates with your backend.</p><div class="api-console"><div class="console-head"><span id="request-method">GET</span><span id="request-url">/api/summary</span><span id="http-status" class="status">—</span></div><pre id="response-body">Send feedback or refresh to inspect a live API response.</pre></div><div class="hint"><b>LAB TIP</b> Open <code>data/feedback.ndjson</code> after submitting. You will find one new JSON object per line. Restart Node.js: the feedback stays.</div></section></div>
+    <div class="section-title feed-title"><div><p class="eyebrow dark">LIVE DATA FROM GET /api/feedback</p><h2>Recent feedback</h2></div><span class="section-note">The latest records come from your server's file.</span></div><div id="feedback-list" class="feedback-grid" aria-live="polite"></div>
+  </main>
+  <footer>Campus Feedback Hub · Learning project · No database or Express required · Built with Node.js core modules</footer>
+  <script src="/app.js" defer></script>
+</body></html>
