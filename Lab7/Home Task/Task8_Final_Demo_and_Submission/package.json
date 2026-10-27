@@ -1,0 +1,22 @@
+{
+  "name": "campus-lost-and-found-api",
+  "version": "1.0.0",
+  "description": "Campus Lost & Found API (Node.js Lab 7 case study)",
+  "private": true,
+  "main": "server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "smtp": "node local-smtp.js",
+    "test": "node --test",
+    "demo": "node demo-flow.js"
+  },
+  "dependencies": {
+    "nodemailer": "^10.2.1",
+    "smtp-server": "^3.21.1",
+    "formidable": "^3.5.4"
+  },
+  "license": "UNLICENSED"
+}

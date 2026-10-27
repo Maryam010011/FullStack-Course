@@ -10,8 +10,23 @@ const { sendJson, readJson } = require('./modules/httpHelpers');
 function createApp({ store = createStore(), events = new EventEmitter() } = {}) {
   // Demonstrates the lecture's EventEmitter: emit AFTER persistence succeeds.
   events.on('feedback:saved', record => {
-    console.log(`Event: saved ${record.courseId} feedback (${record.rating}/5)`);
+    console.log(`Event: saved ${record.courseId} 
+      feedback (${record.rating}/5)`);
   });
+//event to make file autdit log to save record or frrdback like in console 
+
+  events.on('feedback:saved', record => {
+    const logMessage = `Feedback saved for course ${record.courseId} with rating ${record.rating}/5\n`;
+    fs.appendFile('audit.log', logMessage)
+      .then(() => {
+        console.log('Audit log updated.');
+      })
+      .catch(err => {
+        console.error('Error writing to audit log:', err);
+      });
+  });
+
+
 
   async function servePage(res, filename, type) {
     const file = await fs.readFile(path.join(__dirname, 'public', filename));

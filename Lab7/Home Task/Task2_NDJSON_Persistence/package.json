@@ -1,0 +1,14 @@
+{
+  "name": "campus-lost-and-found-api",
+  "version": "1.0.0",
+  "description": "Campus Lost & Found API (Node.js Lab 7 case study)",
+  "private": true,
+  "main": "demo.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "list": "node cli.js list"
+  },
+  "license": "UNLICENSED"
+}

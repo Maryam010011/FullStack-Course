@@ -3,7 +3,7 @@ console.log('This runs in the terminal, not in a browser.');
 
 console.log("Hello from Node.js!");
 
-const studentName = "Ali";
+const studentName = "Maryam";
 const department = "Computer Science";
 
 console.log("Student:", studentName);
